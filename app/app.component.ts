@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { Astro }   from './astro';
+import { AstroService }   from './astro.service';
+
 @Component({
     selector: 'my-app',
     template: `
@@ -9,21 +12,12 @@ import { Component } from '@angular/core';
       {{astro.name}} onboard {{astro.craft}}
       </li>
     </ul>
-    `
+    `,
+    providers: [AstroService]
 })
 export class AppComponent {
 title = 'people in space';
-astros = ASTROS;
-}
-
-export class Astro {
-  craft: string;
-  name: string;
+astros: Astro[];
+constructor(private astroService: AstroService) { }
 
 }
-
-const ASTROS: Astro[] = [
-  { craft: 'freedom 7', name: 'Mr. Nice' },
-  { craft: 'mercury 3', name: 'Narco' },
-  { craft: 'giant penis', name: 'Bombasto' }
-];
