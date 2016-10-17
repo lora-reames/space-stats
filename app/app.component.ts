@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
+
 
 import { Astro }   from './astro';
 import { AstroService }   from './astro.service';
@@ -15,9 +17,16 @@ import { AstroService }   from './astro.service';
     `,
     providers: [AstroService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 title = 'people in space';
 astros: Astro[];
 constructor(private astroService: AstroService) { }
+getAstros(): void {
+  this.astros = this.astroService.getAstros();
+}
+ngOnInit(): void {
+  this.getAstros();
+}
+
 
 }
