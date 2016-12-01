@@ -3,13 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
+import { AstrosComponent } from './astros.component';
 
 @NgModule({
   imports: [
   BrowserModule,
   HttpModule
  ],
-  declarations: [ AppComponent ],
+  declarations: [
+    AppComponent,
+    AstrosComponent
+   ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
