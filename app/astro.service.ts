@@ -5,7 +5,7 @@ import { ASTROS } from './fake_astros';
 
 @Injectable()
 export class AstroService {
-  getAstros(): Astro[] {
-    return ASTROS;
+  getAstros(): Promise<Astro[]> {
+    return Promise.resolve(ASTROS);
   }
 }

@@ -22,7 +22,7 @@ title = 'people in space';
 astros: Astro[];
 constructor(private astroService: AstroService) { }
 getAstros(): void {
-  this.astros = this.astroService.getAstros();
+  this.astroService.getAstros().then(astros => this.astros = astros);
 }
 ngOnInit(): void {
   this.getAstros();
